@@ -6,6 +6,7 @@ render = web.template.render('views', base='layout')
 class Lista_Contacto:
 
     def obtenerContactos(self):
+        conn = None
         try:
             # Conecta a la base de datos
             conn = sqlite3.connect('sql/agenda.db')
@@ -28,9 +29,6 @@ class Lista_Contacto:
                 # Agrega el diccionario creado al array
                 contactos.append(contacto)
         
-            # Cierra la conexión a la base de datos
-            conn.close()
-
             return contactos
         except sqlite3.Error as error:
             print(f"ERROR 100: {error.args}")
@@ -39,11 +37,13 @@ class Lista_Contacto:
             print(f"ERROR 101: {error.args}")
             return []
         finally:
-            conn.close()
-
+            if conn:
+                conn.close()
 
     def GET(self):
+        # NOTA: Aquí agregamos los paréntesis () para que ejecute la consulta
         contactos = self.obtenerContactos()
         print(contactos)
         return render.lista_contacto(contactos)
+    
     
