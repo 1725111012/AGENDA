@@ -1,0 +1,22 @@
+$def with(contactos)
+<h1>Lista de contactos</h1>
+<a href="/">Index</a>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Primer apellido</th>
+        <th>Segundo apellido</th>
+        <th>Email</th>
+        <th>Teléfono</th>
+    </tr>
+    $for contacto in contactos:
+        <tr>$contacto['id_contacto']</tr>
+        <tr>$contacto['nombre']</tr>
+        <tr>$contacto['primer_apellido']</tr>
+        <tr>$contacto['segundo_apellido']</tr>
+        <tr>$contacto['email']'</tr>
+        <tr>$contacto['telefono']</tr>
+    </tr>
+</table>
