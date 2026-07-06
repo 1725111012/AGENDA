@@ -5,15 +5,15 @@ render = web.template.render('views', base='layout')
 
 class Lista_Contacto:
 
-    def obtenerContactos(self):
+    def buscarContacto(self, id_contacto:int):
         conn = None
         try:
             # Conecta a la base de datos
             conn = sqlite3.connect('sql/agenda.db')
             cursor = conn.cursor()
             # Consulta los registros de la tabla contactos
-            query = "SELECT * FROM contactos;"
-            cursor.execute(query)            
+            query = "SELECT * FROM contactos WHERE id_contacto= ?"
+            cursor.execute(query, (id_contacto,))            
             # Crea un array vacio para almacenar los registros
             contactos = []
             # Almacena cada registro en un diccionario
