@@ -1,3 +1,31 @@
-<h1>Editar contacto</h1>
+$def with (contacto)
+<h2>Editar Contacto</h2>
 
-<a href="/">Index</a>
+<p>ID: <br>
+    <input type="text" id="id_contacto" name="id_contacto" value="$contacto['id_contacto']">
+</p>
+
+<p>Nombre: <br>
+    <input type="text" id="nombre" name="nombre" value="$contacto['nombre']">
+</p>
+
+<p>Primer Apellido: <br>
+    <input type="text" id="primer_apellido" name="primer_apellido" value="$contacto['primer_apellido']">
+</p>
+
+<p>Segundo Apellido: <br>
+    <input type="text" id="segundo_apellido" name="segundo_apellido" value="$contacto['segundo_apellido']">
+</p>
+
+<p>Email: <br>
+    <input type="text" id="email" name="email" value="$contacto['email']">
+</p>
+
+<p>Teléfono: <br>
+    <input type="text" id="telefono" name="telefono" value="$contacto['telefono']">
+</p>
+
+<p>
+    <a href="/lista_contacto"><button type="button">Regresar</button></a>
+    <button type="button">Guardar</button>
+</p>

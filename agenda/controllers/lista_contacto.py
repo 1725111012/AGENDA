@@ -40,10 +40,36 @@ class Lista_Contacto:
             if conn:
                 conn.close()
 
+    # Agregamos este método que le hacía falta a tu clase para que no marque error
+    def obtenerContactos(self):
+        conn = None
+        try:
+            conn = sqlite3.connect('sql/agenda.db')
+            cursor = conn.cursor()
+            query = "SELECT * FROM contactos"
+            cursor.execute(query)            
+            contactos = []
+            for row in cursor.fetchall():
+                contacto = {
+                    'id_contacto': row[0],
+                    'nombre': row[1],
+                    'primer_apellido': row[2],
+                    'segundo_apellido': row[3],
+                    'email': row[4],
+                    'telefono': row[5]
+                }
+                contactos.append(contacto)
+            return contactos
+        except sqlite3.Error as error:
+            print(f"ERROR 102: {error.args}")
+            return []
+        finally:
+            if conn:
+                conn.close()
+
     def GET(self):
         # NOTA: Aquí agregamos los paréntesis () para que ejecute la consulta
         contactos = self.obtenerContactos()
         print(contactos)
         return render.lista_contacto(contactos)
-    
     

@@ -1,37 +1,30 @@
 $def with (contacto)
-<form action="" method="GET">
-    <h2>Detalles del Contacto</h2>
-    
-    <div>
-        <label for="id_contacto">ID Contacto:</label>
-        <input type="text" id="id_contacto" name="id_contacto" value="$contacto['id_contacto']" readonly>
-    </div>
+<h2>Detalles del Contacto</h2>
 
-    <div>
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" value="$contacto['nombre']" readonly>
-    </div>
+<p> ID Contacto: <br>
+    <input type="text" id="id_contacto" name="id_contacto" value="$contacto['id_contacto']" readonly>
+</p>
 
-    <div>
-        <label for="primer_apellido">Primer Apellido:</label>
-        <input type="text" id="primer_apellido" name="primer_apellido" value="$contacto['primer_apellido']" readonly>
-    </div>
+<p> Nombre: <br>
+    <input type="text" id="nombre" name="nombre" value="$contacto['nombre']" readonly>
+</p>
 
-    <div>
-        <label for="segundo_apellido">Segundo Apellido:</label>
-        <input type="text" id="segundo_apellido" name="segundo_apellido" value="$contacto['segundo_apellido']" readonly>
-    </div>
+<p> Primer Apellido: <br>
+    <input type="text" id="primer_apellido" name="primer_apellido" value="$contacto['primer_apellido']" readonly>
+</p>
 
-    <div>
-        <label for="email">Correo Electrónico:</label>
-        <input type="text" id="email" name="email" value="$contacto['email']" readonly>
-    </div>
+<p> Segundo Apellido: <br>
+    <input type="text" id="segundo_apellido" name="segundo_apellido" value="$contacto['segundo_apellido']" readonly>
+</p>
 
-    <div>
-        <label for="telefono">Teléfono:</label>
-        <input type="text" id="telefono" name="telefono" value="$contacto['telefono']" readonly>
-    </div>
+<p> Email: <br>
+    <input type="text" id="email" name="email" value="$contacto['email']" readonly>
+</p>
 
-    <br>
-    <a href="/lista_contacto">Volver a la lista</a>
-</form>
+<p> Teléfono: <br>
+    <input type="text" id="telefono" name="telefono" value="$contacto['telefono']" readonly>
+</p>
+
+<p>
+    <a href="/lista_contacto"><button type="button">Regresar</button></a>
+</p>
